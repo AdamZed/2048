@@ -1,5 +1,11 @@
 // TODO fic double stack bug
 
+/**
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+ */
 let game_board = [
   [0, 0, 0, 0],
   [0, 0, 0, 0],
@@ -68,12 +74,26 @@ function advanceGame() {
   if (!isBoardFull()) generateNew();
   updateBoardVisual();
 
-  if (isGameOver()) alert("you lost");
+  if (isGameOver())
+    setTimeout(() => {
+      alert("you lost");
+    }, 750);
 }
 
 function isGameOver() {
+  return isBoardFull() && !isPair();
+}
+
+function isPair() {
+  for (var i = 0; i < 3; i++) {
+    if (game_board[3][i] == game_board[3][i + 1]) return true;
+    if (game_board[i][3] == game_board[i + 1][3]) return true;
+    for (var j = 0; j < 3; j++) {
+      if (game_board[i][j] == game_board[i + 1][j]) return true;
+      if (game_board[i][j] == game_board[i][j + 1]) return true;
+    }
+  }
   return false;
-  // TODO
 }
 
 function moveUp() {
@@ -150,4 +170,5 @@ document.addEventListener("keydown", (e) => {
   else if (e.key == "ArrowUp") moveUp();
 });
 
-start_game();
+//start_game();
+updateBoardVisual();

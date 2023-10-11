@@ -1,0 +1,64 @@
+<head>
+  <style>
+    #game {
+      font-family: sans-serif;
+      background-color: #9ad9f3;
+      width: 80%;
+      aspect-ratio: 1;
+    }
+    .game {
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      row-gap: 3%;
+      column-gap: 3%;
+      padding: 3%;
+    }
+    .game-cell {
+      border-radius: 5px;
+      background: #c4e6f5;
+      text-align: center;
+      font-size: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;;
+    }
+    .control-button {
+      padding: 10px;
+      font-size: 2rem;
+    }
+  </style>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <div id="game" class="game">
+    <div class="game-cell" id="cell-id-00"></div>
+    <div class="game-cell" id="cell-id-01"></div>
+    <div class="game-cell" id="cell-id-02"></div>
+    <div class="game-cell" id="cell-id-03"></div>
+    <div class="game-cell" id="cell-id-10"></div>
+    <div class="game-cell" id="cell-id-11"></div>
+    <div class="game-cell" id="cell-id-12"></div>
+    <div class="game-cell" id="cell-id-13"></div>
+    <div class="game-cell" id="cell-id-20"></div>
+    <div class="game-cell" id="cell-id-21"></div>
+    <div class="game-cell" id="cell-id-22"></div>
+    <div class="game-cell" id="cell-id-23"></div>
+    <div class="game-cell" id="cell-id-30"></div>
+    <div class="game-cell" id="cell-id-31"></div>
+    <div class="game-cell" id="cell-id-32"></div>
+    <div class="game-cell" id="cell-id-33"></div>
+  </div>
+
+  <div>
+    <button class="control-button" onclick="moveUp()">^</button>
+  </div>
+  <div>
+    <button class="control-button" onclick="moveLeft()"><</button>
+    <button class="control-button" onclick="moveRight()">></button>
+  </div>
+  <div>
+    <button class="control-button" onclick="moveDown()">v</button>
+  </div>
+</body>
